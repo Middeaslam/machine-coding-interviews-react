@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.app h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.board-size-selector {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.board-size-selector label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.board-size-selector select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.board-size-selector select:hover {
+  border-color: #007bff;
+}
+
+.app p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.game-board-container {
+  margin-top: 30px;
+}
+
+.game-board-container h3 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.game-board {
+  display: grid;
+  gap: 2px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #333;
+  transition: background-color 0.2s;
+}
+.square:hover {
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+.square:active {
+  background-color: #e6f3ff;
+}
+
+.game-info {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-info h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.game-info p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.game-info strong {
+  color: #007bff;
+  font-size: 18px;
+}
+
+.reset-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.reset-button:hover {
+  background-color: #c82333;
+}
+.status-message {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.status-message.playing {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.status-message.won {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+  animation: celebration 0.5s ease-in-out;
+}
+
+.status-message.draw {
+  background-color: #fff3e0;
+  color: #ef6c00;
+}
+
+@keyframes celebration {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Disable squares when game is over */
+.square:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.square.filled {
+  background-color: #f0f8ff;
+}
+
+/* Make X's and O's more colorful */
+.square:contains("X") {
+  color: #d32f2f;
+}
+
+.square:contains("O") {
+  color: #1976d2;
+}
